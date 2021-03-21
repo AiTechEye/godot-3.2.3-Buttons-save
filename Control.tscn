@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stuck" type="Button" parent="."]
+margin_left = 253.362
+margin_top = 288.369
+margin_right = 350.362
+margin_bottom = 382.369
+text = "Stuck button"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" parent="." instance=ExtResource( 2 )]
+
+[node name="Button2" parent="." instance=ExtResource( 2 )]
+margin_left = 117.466
+margin_top = 2.66969
+margin_right = -806.534
+margin_bottom = -497.33
+
+[node name="Button3" parent="." instance=ExtResource( 2 )]
+margin_left = 240.939
+margin_top = 5.33936
+margin_right = -683.061
+margin_bottom = -494.661
+
+[node name="Button4" parent="." instance=ExtResource( 2 )]
+margin_left = 357.737
+margin_top = 3.3371
+margin_right = -566.263
+margin_bottom = -496.663
+
+[node name="Button5" parent="." instance=ExtResource( 2 )]
+margin_left = 483.212
+margin_top = 2.00227
+margin_right = -440.788
+margin_bottom = -497.998
+
+[node name="Button6" parent="." instance=ExtResource( 2 )]
+margin_left = 606.017
+margin_top = 0.667412
+margin_right = -317.983
+margin_bottom = -499.333
+
+[node name="Button7" parent="." instance=ExtResource( 2 )]
+margin_left = 726.153
+margin_top = 2.00225
+margin_right = -197.847
+margin_bottom = -497.998
+
+[node name="Button8" parent="." instance=ExtResource( 2 )]
+margin_left = 7.19388
+margin_top = 140.4
+margin_right = -916.806
+margin_bottom = -359.6
+
+[node name="toggled" type="Button" parent="."]
+margin_left = 418.859
+margin_top = 261.002
+margin_right = 647.859
+margin_bottom = 400.002
+text = "Toggle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="Button" parent="."]
+margin_left = 18.0142
+margin_top = 432.65
+margin_right = 69.0142
+margin_bottom = 460.65
+rect_scale = Vector2( 5, 5 )
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="stuck" to="." method="_on_stuck_button_down"]
+[connection signal="tree_entered" from="stuck" to="." method="_on_stuck_tree_entered"]
+[connection signal="button_down" from="toggled" to="." method="_on_toggle_button_down"]
+[connection signal="ready" from="toggled" to="." method="_on_toggled_ready"]
+[connection signal="button_down" from="reset" to="." method="_on_reset_button_down"]
